@@ -1,11 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.9)  21 OCT 2017 22:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.23)  29 OCT 2017 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**leaderboard_table.tex
-
-(/home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/latex_leaderboard/leaderb
-oard_table.tex
+**leaderboard_table
+(./leaderboard_table.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 29 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -877,8 +875,7 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(/home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/latex_leaderboard/leaderb
-oard_table.aux)
+(./leaderboard_table.aux)
 \openout1 = `leaderboard_table.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -895,7 +892,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 33.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 33.
@@ -1002,16 +1000,14 @@ LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
 LaTeX Info: Redefining \nameref on input line 33.
 
-(/home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/latex_leaderboard/leaderb
-oard_table.out)
-(/home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/latex_leaderboard/leaderb
-oard_table.out)
+(./leaderboard_table.out) (./leaderboard_table.out)
 \@outlinefile=\write3
 \openout3 = `leaderboard_table.out'.
 
 \c@lstlisting=\count140
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 41.
- (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 41.
@@ -1046,17 +1042,22 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-(/home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/latex_leaderboard/table_1
-.tex [1
+) (./table_1.tex
+[1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-(/home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/latex_leaderboard/table_2
-.tex)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 1 on input line 62.
+
+) (./table_2.tex)
 LaTeX Font Info:    Try loading font information for TS1+lmr on input line 55.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 60.
 
 Overfull \hbox (8.55876pt too wide) in paragraph at lines 59--60
@@ -1066,9 +1067,7 @@ me eit-her di-rect-ly or via mail at 'ha-rald-lons@gmail.com'.
 
 [2]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 60.
-
-(/home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/latex_leaderboard/leaderb
-oard_table.aux)
+ (./leaderboard_table.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 60.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 60.
 Package rerunfilecheck Info: File `leaderboard_table.out' has not changed.
@@ -1076,19 +1075,18 @@ Package rerunfilecheck Info: File `leaderboard_table.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
  ) 
 Here is how much of TeX's memory you used:
- 10539 strings out of 494374
- 154173 string characters out of 6164955
- 263477 words of memory out of 5000000
+ 10538 strings out of 494374
+ 152980 string characters out of 6164954
+ 264479 words of memory out of 5000000
  13681 multiletter control sequences out of 15000+600000
  35333 words of font info for 39 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
- 36i,6n,38p,251b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,6n,38p,247b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmr12.pfb>
-Output written on /home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/latex_le
-aderboard/leaderboard_table.pdf (2 pages, 91181 bytes).
+Output written on leaderboard_table.pdf (2 pages, 91600 bytes).
 PDF statistics:
  39 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream
