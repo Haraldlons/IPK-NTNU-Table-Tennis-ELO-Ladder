@@ -8,6 +8,9 @@ from elo_functions import elo
 import time
 import os
 import sys
+from make_leaderboard_pdf import import_ordered_elo_ladder_s
+
+start_time = time.time()
 
 def import_plot_csv():
     try:
@@ -61,8 +64,9 @@ def plot_all_players_in_bulks_of_ten(plot_df, dates):
         plot_players(plot_df.columns[i:k], plot_df, dates)
 
 def plot_top_and_bottom_players(plot_df, dates):
-    plotPlayers(latex_df.iloc[:10]["name"])
-    plotPlayers(latex_df_2.iloc[-10:]["name"])
+    latex_df, latex_df_2 = import_ordered_elo_ladder_s()
+    plot_players(latex_df.iloc[:10]["name"], plot_df, dates)
+    plot_players(latex_df_2.iloc[-10:]["name"],plot_df, dates)
 
 
 if __name__ == '__main__':
@@ -71,7 +75,9 @@ if __name__ == '__main__':
     print("Imported plot_df")
     dates = get_dates(plot_df)
     #plot_players(plot_df.columns[20:30], plot_df, dates)
-    plot_all_players_in_bulks_of_ten(plot_df, dates)
+    #plot_all_players_in_bulks_of_ten(plot_df, dates)
     plot_top_and_bottom_players(plot_df, dates)
 
-    print("Finished plotting script")
+    end_time = time.time()
+
+    print("Finished plotting script in %s seconds" % (end_time - start_time))
