@@ -12,7 +12,7 @@ start_time = time.time()
 
 def import_players_csv():
     try:
-        temp_df = pd.read_csv("players.csv")
+        temp_df = pd.read_csv("../players.csv")
         print("Imported " + str(temp_df.shape[0]) + " players")
         return temp_df
     except:
@@ -22,7 +22,7 @@ def import_players_csv():
 
 def import_matches_csv():
     try:
-        temp_df = pd.read_csv("matches.csv")
+        temp_df = pd.read_csv("../matches.csv")
         print("Imported " + str(temp_df.shape[0]) + " matches")
         return temp_df
     except:

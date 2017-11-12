@@ -75,7 +75,7 @@ if __name__ == '__main__':
     print("Imported plot_df")
     dates = get_dates(plot_df)
     #plot_players(plot_df.columns[20:30], plot_df, dates)
-    #plot_all_players_in_bulks_of_ten(plot_df, dates)
+    plot_all_players_in_bulks_of_ten(plot_df, dates)
     plot_top_and_bottom_players(plot_df, dates)
 
     end_time = time.time()
