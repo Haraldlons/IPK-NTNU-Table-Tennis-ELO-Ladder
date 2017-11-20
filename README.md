@@ -11,6 +11,11 @@ NB! This is not just a template I have yet to fill out.
 ```
 python main.py
 ```
+4.1. If any new members have joined the league, you will get a warning:
+========================================================================
+Player named 'Ola Nordmann' is NOT FOUND in the player database. 
+========================================================================
+Open 'players.csv' and add the new player. You can then rerun 'main.py'.
 5. Plot the ELO temporal score of every player
 ```
 python plot_temporal_elo.py
@@ -35,6 +40,17 @@ NB! I bugg has been spoted where you need to compile the LaTeX file several time
 <ctrl> + b
 ```
 
+## Ideas for improvement
+1. Make tiers
+- 1-3	Challenger
+- 4-10  Master
+- 11-20 Diamond
+- 21-30 Platinum
+- 31-40 Gold
+- 41-50 Silver
+- 51-60 Bronze
+- 61-> Wood
+
 
 
 
@@ -52,9 +68,12 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 What things you need to install the software and how to install them
+- Python 3
 
+Python libraries. Install with f.ex. pip3
 ```
-Give examples
+pandas
+matplotlib
 ```
 
 ### Installing
@@ -64,7 +83,9 @@ A step by step series of examples that tell you have to get a development env ru
 Say what the step will be
 
 ```
-Give the example
+pip3 install pandas
+pip3 install matplotlib
+pip3 
 ```
 
 And repeat
@@ -76,6 +97,7 @@ until finished
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
+TODO: Make a folder with dummy data so user can run program and check if it works.
 
 Explain how to run the automated tests for this system
 
