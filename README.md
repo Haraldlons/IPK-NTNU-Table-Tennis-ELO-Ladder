@@ -12,9 +12,13 @@ NB! This is not just a template I have yet to fill out.
 python main.py
 ```
 4.1. If any new members have joined the league, you will get a warning:
+
+```
 ========================================================================
 Player named 'Ola Nordmann' is NOT FOUND in the player database. 
 ========================================================================
+```
+
 Open 'players.csv' and add the new player. You can then rerun 'main.py'.
 5. Plot the ELO temporal score of every player
 ```
