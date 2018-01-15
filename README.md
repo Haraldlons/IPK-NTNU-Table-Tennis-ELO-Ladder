@@ -1,25 +1,26 @@
 # IPK NTNU Table Tennis ELO Ladder
 
 TODO: Make this README.md complete!
-NB! This is not just a template I have yet to fill out.
+NB! This is taken from a template in which I still have something to add.
 
 ## How to update the ladder
 1. Gather all new "Match history" sheets
-2. Open "matches.csv" and fill out the newly played matches
-3. go to "pyCharm" directory
-4. Run calculate the new ELO scores for everyone
+2. Open "Data/matches.csv" and fill out the newly played matches
+3. go to "Main_program" directory
+4. Run 'main.py' to calculate the new ELO scores for everyone
 ```
+cd Main_program
 python main.py
 ```
 4.1. If any new members have joined the league, you will get a warning:
 
 ```
 ========================================================================
-Player named 'Ola Nordmann' is NOT FOUND in the player database. 
+Player named 'Ola Nordmann' is NOT FOUND in the player database.
 ========================================================================
 ```
 
-Open 'players.csv' and add the new player. You can then rerun 'main.py'.
+Open 'Data/players.csv' and add the new player. You can then rerun 'main.py'.
 5. Plot the ELO temporal score of every player
 ```
 python plot_temporal_elo.py
@@ -30,7 +31,7 @@ python make_leaderboard_pdf.py
 ```
 7. Go to "latex_leaderboard" directory and the current date to get the newly generated LaTeX files
 ```
-cd latex_leaderboard
+cd Results/leaderboard_in_latex
 cd <current-date>
 ```
 8. Open main.tex in sublime
@@ -55,19 +56,12 @@ NB! I bugg has been spoted where you need to compile the LaTeX file several time
 - 51-60 Bronze
 - 61-> Wood
 
-
-
-
-
-
-
-
-
 One Paragraph of project description goes here
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
 
 ### Prerequisites
 
@@ -78,6 +72,7 @@ Python libraries. Install with f.ex. pip3
 ```
 pandas
 matplotlib
+numpy
 ```
 
 ### Installing
@@ -89,7 +84,7 @@ Say what the step will be
 ```
 pip3 install pandas
 pip3 install matplotlib
-pip3 
+pip3 install numpy
 ```
 
 And repeat
@@ -137,7 +132,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
