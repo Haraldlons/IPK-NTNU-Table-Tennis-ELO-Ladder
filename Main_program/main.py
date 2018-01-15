@@ -12,7 +12,7 @@ start_time = time.time()
 
 def import_players_csv():
     try:
-        temp_df = pd.read_csv("../players.csv")
+        temp_df = pd.read_csv("../Data/players.csv")
         print("Imported " + str(temp_df.shape[0]) + " players")
         return temp_df
     except:
@@ -22,7 +22,7 @@ def import_players_csv():
 
 def import_matches_csv():
     try:
-        temp_df = pd.read_csv("../matches.csv")
+        temp_df = pd.read_csv("../Data/matches.csv")
         print("Imported " + str(temp_df.shape[0]) + " matches")
         return temp_df
     except:
@@ -209,7 +209,7 @@ if __name__ == '__main__':
     plott_df = make_plott_df(players_df)
     elo_df, plott_df = calculate_elo_from_all_matches(elo_df, plott_df)
     elo_df.to_csv("full_elo_ladder.csv")
-    plott_df.to_csv("plot_df.csv")
+    plott_df.to_csv("../Data/plot_df.csv")
     ordered_ladder_df, ordered_ladder_df_2 = make_ordered_elo_ladder(elo_df)
     ordered_ladder_df.to_csv("ordered_elo_df.csv")
     ordered_ladder_df_2.to_csv("ordered_elo_df_2.csv")

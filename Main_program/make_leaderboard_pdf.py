@@ -31,15 +31,15 @@ def import_ordered_elo_ladder_s():
     return temp_df, temp_df_2
 
 def save_to_latex_files(df, df_2):
-    directory = "latex_leaderboard/" + time.strftime("%Y.%m.%d") + "/"
+    directory = "../Results/leaderboard_in_latex/" + time.strftime("%Y.%m.%d") + "/"
     if not os.path.exists(directory):
         print("Making new folder for latex-files for " + time.strftime("%Y.%m.%d"))
         os.makedirs(directory)
-        copyfile("latex_leaderboard/template/main.tex", directory+"main.tex")
-    df.to_latex("latex_leaderboard/" + time.strftime("%Y.%m.%d") + "/table_1.tex", index=True,
+        copyfile("../Results/leaderboard_in_latex/template/main.tex", directory+"main.tex")
+    df.to_latex("../Results/leaderboard_in_latex/" + time.strftime("%Y.%m.%d") + "/table_1.tex", index=True,
                 columns=["name", "elo", "joined_date", "matches_played", "wins", "losses", "win_rate"],
                 column_format="|r|l|r|l|l|l|l|l|", longtable=True)
-    df_2.to_latex("latex_leaderboard/" + time.strftime("%Y.%m.%d") + "/table_2.tex", index=False,
+    df_2.to_latex("../Results/leaderboard_in_latex/" + time.strftime("%Y.%m.%d") + "/table_2.tex", index=False,
                   columns=["static_index", "name", "elo", "joined_date", "matches_played", "wins", "losses",
                            "win_rate"], column_format="|r|l|r|l|l|l|l|l|", longtable=True)
 

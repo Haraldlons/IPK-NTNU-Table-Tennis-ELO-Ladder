@@ -14,7 +14,7 @@ start_time = time.time()
 
 def import_plot_csv():
     try:
-        temp_df = pd.read_csv("plot_df.csv")
+        temp_df = pd.read_csv("../Data/plot_df.csv")
         return temp_df
     except:
         print("Failed to retrieve plot_df")
@@ -42,11 +42,11 @@ def plot_players(players, plot_df, dates):
     matplotlib.rcParams.update({'font.size': 17})
 
     # ==== Save file ====
-    directory = "plots/" + time.strftime("%Y.%m.%d") + "/"
+    directory = "../Results/plots/" + time.strftime("%Y.%m.%d") + "/"
     if not os.path.exists(directory):
         print("Making new folder for plots for " + time.strftime("%Y.%m.%d"))
         os.makedirs(directory)
-    fig.savefig("plots/" + time.strftime("%Y.%m.%d") + "/" + str(players.values[:]) + ".png", bbox_inches='tight')
+    fig.savefig("../Results/plots/" + time.strftime("%Y.%m.%d") + "/" + str(players.values[:]) + ".png", bbox_inches='tight')
     # ---- Clear
 
 def get_dates(plot_df):
