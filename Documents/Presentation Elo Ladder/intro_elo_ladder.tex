@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+\usepackage[norsk]{babel}	% Norwegian names on Introduction and other places
+\usepackage[T1]{fontenc}		% Norwegian charset tegnsett (Ã¦Ã¸Ã¥)
+\usepackage[utf8]{inputenc}	% Norwegian charset
+\usepackage{geometry}		% Recommended package for controlling margins.
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{
+			amsmath,
+			caption,
+			amssymb, %Comments here are fine
+			float, 
+			lmodern, 
+			parskip, 
+			textcomp,
+			}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, 
+    linkcolor=blue, % Color of links in 'innholdsfortegnelse'
+    filecolor=blue, % Doesn't show when colorlinks=true. It's the border-color. 
+    urlcolor=blue, % Links wil be nice blue color
+}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usepackage{listings} % für Formatierung in Quelltexten
+\lstset{
+    escapeinside={(*@}{@*)},          % if you want to add LaTeX within your code
+}
+
+\begin{document}
+
+\title{\textbf{IPK NTNU Table tennis ELO ladder}}
+\author{Author: Harald Lønsethagen}
+% \date{\today}
+\date{Written: \today\tab Version: 1.0}
+
+\maketitle
+ 
+  %{\begin{figure}[H]
+   % \centering
+    %\includegraphics{Designimage}
+%\end{figure}}
+
+% \clearpage\thispagestyle{empty}
+\makeatletter
+%\renewcommand\tableofcontents{\@starttoc{toc}}
+%\makeatother
+
+% \tableofcontents
+\section{Finally it's here!}
+A continous ranked ladder for students and employees ready to embrace their competitive drive. This is not like a tournament, but more like the ELO ladder chess players compete in. You can whenever you want challange your buddy to a \textbf{ranked elo match}. 
+\section{First time playing?}
+Just write the name of yourself and your opponent in the sheet to the right. If it is the first time you play, please write the name in readable capital letters. Also remember after the match to cross out who won. Please also include the date of the match, so later I can make temporal plots of how each players ELO score has changed over time.
+\section{Match rules}
+One match consist of a \textbf{best-of-3}. Meaning best of three sets to 11-points.
+For each set, you need to win with at least 2 points. That means, if the score is 10-10, you need to win the next two points in order to win the set. For the first set, you decide who starts serving by tossing the ball over the net and you need at least three transitions before a serve-winner is decided. You then change server each 2 points.
+\section{Why use a ELO ladder?}
+The benefit by using ELO is that your updated score is heavily dependend on the ELO score difference between the players. If you have a low ELO score, but win against one which have a high ELO score, your ELO score will greatly increase, but if you loose your ELO score will just barely decrease. This means its hard to stay at the top, since you then are expected to win against \textit{lower-ranked players}, and its easy to gain ELO score if you are low-ranked.\\
+
+For more information about the ELO rating system check this out: \url{https://en.wikipedia.org/wiki/Elo_rating_system}.
+\section{How is the ELO score updated?}
+Every week or so, I will personaly collect the match history of the week and run it trought my algorithm which will calculate the ELO score of every player. Finally I will print out a leaderboard with the updated information. 
+\section{Future}
+The goal is to get as many people as possible involved. It is ment as a \textit{low-threshold} competition to compete in, and as the same time up the stakes and bragging right after a well-played set of games.
+\section{Public sourcecode}
+Have a look at the python-code which calculates the elo score of each player. The repository is public at GitHub.\\
+
+\url{https://github.com/Haraldlons/IPK-NTNU-Table-Tennis-ELO-Ladder}
+\section{Feedback}
+Do you have some idéas how to make this competition better? Or maybe you find flaws in the rules? Maybe you cought a loop-whole in the system and want to make me aware of it. Anyways, please contact me at \textbf{haraldlons@gmail.com}.
+
+\end{document}
