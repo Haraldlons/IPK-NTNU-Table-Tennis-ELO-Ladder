@@ -64,6 +64,10 @@ def calculate_elo_from_all_matches(elo_df, plott_df):
         # print(str(i) +": " + str(match['Player 1']) + " - " + str(match['Player 2']))
         player_1 = match["Player 1"]
         player_2 = match["Player 2"]
+        # New test to remove Harald from leaderboard
+        if player_1 == "Harald Lønsethagen" or player_2 == "Harald Lønsethagen":
+            continue
+
         elo_rating_a = elo_df[elo_df['first_name'] == player_1]['elo']
         elo_rating_b = elo_df[elo_df['first_name'] == player_2]['elo']
 
@@ -143,6 +147,8 @@ def calculate_elo_from_all_matches(elo_df, plott_df):
         # print(str(i) +": '" + str(match['Player 1']) + "' - '" + str(match['Player 2']) + "'")
         player_1 = match["Player 1"]
         player_2 = match["Player 2"]
+        if player_1 == "Harald Lønsethagen" or player_2 == "Harald Lønsethagen":
+            continue
         old_number_of_matches_played_player_1 = elo_df[elo_df['first_name'] == player_1]['matches_played']
         old_number_of_matches_played_player_2 = elo_df[elo_df['first_name'] == player_2]['matches_played']
         if (match['Winner'] == player_1):
@@ -166,6 +172,8 @@ def calculate_elo_from_all_matches(elo_df, plott_df):
         elo_df = elo_df.reset_index()
     players = elo_df['first_name']
     for player in players:
+        if player == "Harald Lønsethagen":
+            continue
         # print(player)
         wins = elo_df[elo_df['first_name'] == player]['wins']
         losses = elo_df[elo_df['first_name'] == player]['losses']
