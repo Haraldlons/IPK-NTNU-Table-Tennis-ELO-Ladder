@@ -1,0 +1,7 @@
+PWD /home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/Results/leaderboard_in_latex/avduking
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/Results/leaderboard_in_latex/avduking/table_1.tex
+OUTPUT /home/harald/coding/IPK-NTNU-Table-Tennis-ELO-Ladder/Results/leaderboard_in_latex/avduking/table_1.log
