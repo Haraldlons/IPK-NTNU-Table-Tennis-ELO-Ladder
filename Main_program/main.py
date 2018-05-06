@@ -6,9 +6,10 @@ from datetime import datetime
 from elo_functions import expected
 from elo_functions import elo
 import time
-import os
+
 
 start_time = time.time()
+
 
 def import_players_csv():
     try:
@@ -20,6 +21,7 @@ def import_players_csv():
         print("!!!!! Failed to import players.csv !!!!!")
         print("--------------------------------")
 
+
 def import_matches_csv():
     try:
         temp_df = pd.read_csv("../Data/matches.csv")
@@ -30,6 +32,7 @@ def import_matches_csv():
         print("!!!!! Failed to import matches.csv !!!!!")
         print("--------------------------------")
 
+
 def make_elo_df(players_df):
     elo_df = players_df
     elo_df['elo'] = 1000
@@ -39,6 +42,7 @@ def make_elo_df(players_df):
     elo_df['win_rate'] = 0
     return elo_df
 
+
 def make_plott_df(players_df):
     temp_df = players_df.set_index("first_name").T
     temp_df["time"] = 0
@@ -47,6 +51,7 @@ def make_plott_df(players_df):
     temp_df = temp_df.append(append_df)
     temp_df = temp_df.iloc[-1:]
     return temp_df
+
 
 def calculate_elo_from_all_matches(elo_df, plott_df):
     stop_flag = 0
@@ -134,7 +139,8 @@ def calculate_elo_from_all_matches(elo_df, plott_df):
             plott_df = plott_df.reset_index()
             last_date = current_date
 
-    if(stop_flag): sys.exit()
+    if(stop_flag):
+        sys.exit()
 
     plott_df = plott_df.fillna(method="ffill")
     length = matches_df.shape[0]
@@ -171,13 +177,13 @@ def calculate_elo_from_all_matches(elo_df, plott_df):
         losses = elo_df[elo_df['first_name'] == player]['losses']
         matches_played = elo_df[elo_df['first_name'] == player]['matches_played']
         win_rate = round((wins / matches_played) * 100, 4)
-        #print(win_rate)
+        # print(win_rate)
         elo_df = elo_df.set_index('first_name')
         elo_df = elo_df.set_value(player, 'win_rate', win_rate)
         elo_df = elo_df.reset_index()
-    elo_df
 
     return elo_df, plott_df
+
 
 def make_ordered_elo_ladder(elo_df):
     latex_df = elo_df.sort_values('elo', ascending=False)[
@@ -189,8 +195,8 @@ def make_ordered_elo_ladder(elo_df):
     latex_df_2 = latex_df.iloc[-5:]
     static_index = latex_df.shape[0] - 4
     elo_limit = latex_df.iloc[static_index - 2]['elo']  # -2 since I set of index
-    #print(elo_limit)
-    #print(static_index)
+    # print(elo_limit)
+    # print(static_index)
     latex_df_2 = latex_df_2.reset_index()
     latex_df_2 = latex_df_2[['name', 'elo', "joined_date", "matches_played", "wins", "losses", "win_rate"]]
     latex_df_2['static_index'] = static_index
@@ -200,19 +206,23 @@ def make_ordered_elo_ladder(elo_df):
     latex_df = latex_df.iloc[:-5]
     return latex_df, latex_df_2
 
+
 if __name__ == '__main__':
     print("Welcome to IPK-NTNU-Table-Tennis-Elo-Ladder python script")
     matches_df = import_matches_csv()
     players_df = import_players_csv()
     elo_df = make_elo_df(players_df)
-    #df for plotting
+
     plott_df = make_plott_df(players_df)
+
     elo_df, plott_df = calculate_elo_from_all_matches(elo_df, plott_df)
+
     elo_df.to_csv("full_elo_ladder.csv")
+
     plott_df.to_csv("../Data/plot_df.csv")
     ordered_ladder_df, ordered_ladder_df_2 = make_ordered_elo_ladder(elo_df)
     ordered_ladder_df.to_csv("ordered_elo_df.csv")
     ordered_ladder_df_2.to_csv("ordered_elo_df_2.csv")
 
     end_time = time.time()
-    print("Finished script in %s seconds" % (end_time-start_time))
+    print("Finished script in %s seconds" % (end_time - start_time))
