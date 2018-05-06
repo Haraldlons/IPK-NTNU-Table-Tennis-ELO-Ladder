@@ -1,4 +1,7 @@
 pyCharm/.idea/*
 pyCharm/__pycache__/*
 Main_program/__pycache__/*
-.idea/*
+.idea/**
+Main_program/.idea/**
+Main_program/venv/**
+**.csv#
