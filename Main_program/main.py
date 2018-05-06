@@ -24,7 +24,7 @@ def import_players_csv():
 
 def import_matches_csv():
     try:
-        temp_df = pd.read_csv("../Data/matches_season_2.csv")
+        temp_df = pd.read_csv("../Data/matches_season_23.csv")
         print("Imported " + str(temp_df.shape[0]) + " matches")
         return temp_df
     except:
