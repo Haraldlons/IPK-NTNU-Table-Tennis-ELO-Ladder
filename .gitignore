@@ -5,3 +5,11 @@ Main_program/__pycache__/*
 Main_program/.idea/**
 Main_program/venv/**
 **.csv#
+
+Data/\.~lock\.matches_season_23\.csv#
+
+Data/\.~lock\.plot_df\.csv#
+
+Main_program/\.~lock\.ordered_elo_df\.csv#
+
+Main_program/\.~lock\.ordered_elo_df_2\.csv#
