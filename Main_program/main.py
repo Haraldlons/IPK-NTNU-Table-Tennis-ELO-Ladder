@@ -176,11 +176,12 @@ def calculate_elo_from_all_matches(elo_df, plott_df):
         wins = elo_df[elo_df['first_name'] == player]['wins']
         losses = elo_df[elo_df['first_name'] == player]['losses']
         matches_played = elo_df[elo_df['first_name'] == player]['matches_played']
-        win_rate = round((wins / matches_played) * 100, 4)
-        # print(win_rate)
-        elo_df = elo_df.set_index('first_name')
-        elo_df = elo_df.set_value(player, 'win_rate', win_rate)
-        elo_df = elo_df.reset_index()
+        if matches_played.values[0] > 0:
+            win_rate = round((wins / matches_played) * 100, 4)
+            # print(win_rate)
+            elo_df = elo_df.set_index('first_name')
+            elo_df = elo_df.set_value(player, 'win_rate', win_rate)
+            elo_df = elo_df.reset_index()
 
     return elo_df, plott_df
 
@@ -207,12 +208,15 @@ def make_ordered_elo_ladder(elo_df):
     return latex_df, latex_df_2
 
 
+# def clean_df_from_players_with_zero_matches(df):
+#     for row in  df
+
 if __name__ == '__main__':
     print("Welcome to IPK-NTNU-Table-Tennis-Elo-Ladder python script")
     matches_df = import_matches_csv()
     players_df = import_players_csv()
     elo_df = make_elo_df(players_df)
-
+    # elo_df = clean_df_from_players_with_zero_matches(elo_df)
     plott_df = make_plott_df(players_df)
 
     elo_df, plott_df = calculate_elo_from_all_matches(elo_df, plott_df)
