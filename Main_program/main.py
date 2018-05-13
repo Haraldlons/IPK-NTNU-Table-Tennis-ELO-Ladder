@@ -6,6 +6,7 @@ from datetime import datetime
 from elo_functions import expected
 from elo_functions import elo
 import time
+import sys
 
 
 start_time = time.time()
@@ -208,8 +209,16 @@ def make_ordered_elo_ladder(elo_df):
     return latex_df, latex_df_2
 
 
-# def clean_df_from_players_with_zero_matches(df):
-#     for row in  df
+def clean_elo_df_from_players_with_zero_matches(df):
+    df = df[df['matches_played'] > 0]
+    return df
+
+def clean_plot_df_from_players_with_zero_matches(df):
+    df = df.dropna(1, how='all')
+    return df
+
+
+
 
 if __name__ == '__main__':
     print("Welcome to IPK-NTNU-Table-Tennis-Elo-Ladder python script")
@@ -220,6 +229,8 @@ if __name__ == '__main__':
     plott_df = make_plott_df(players_df)
 
     elo_df, plott_df = calculate_elo_from_all_matches(elo_df, plott_df)
+    elo_df = clean_elo_df_from_players_with_zero_matches(elo_df)
+    plott_df = clean_plot_df_from_players_with_zero_matches(plott_df)
 
     elo_df.to_csv("full_elo_ladder.csv")
 
