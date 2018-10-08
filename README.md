@@ -1,23 +1,22 @@
 # IPK NTNU Table Tennis ELO Ladder
+This project is for calculating the scores in a continuous ranked table tennis ladder. 
 
 TODO: Make this README.md complete!
 NB! This is taken from a template in which I still have something to add.
 
 ## How to update the ladder
-1. Gather all new "Match history" sheets
+1. Gather all new "[Match history](https://github.com/Haraldlons/IPK-NTNU-Table-Tennis-ELO-Ladder/tree/master/Documents)" physical sheets
 2. Open "Data/matches.csv" and fill out the newly played matches
 3. go to "Main_program" directory
 4. Run 'main.py' to calculate the new ELO scores for everyone
-```
+```bash
 cd Main_program
 python main.py
 ```
 4.1. If any new members have joined the league, you will get a warning:
 
-```
-========================================================================
+```bash
 Player named 'Ola Nordmann' is NOT FOUND in the player database.
-========================================================================
 ```
 
 Open 'Data/players.csv' and add the new player. You can then rerun 'main.py'.
@@ -39,24 +38,14 @@ cd <current-date>
 subl main.tex
 ```
 9. Generate new PDF from .tex files in current folder
-- If you have install LaTeXTools in sublime, you can simply press "<ctrl> + b" and a new PDF will be created
-NB! I bugg has been spoted where you need to compile the LaTeX file several times before the table is nice-looking in the PDF. Simply press "<ctrl> + b" a couple of times.
+- If you have install LaTeXTools in sublime, you can simply press "ctrl-b" and a new PDF will be created
+NB! I bugg has been spoted where you need to compile the LaTeX file several times before the table is nice-looking in the PDF. 
+Simply press "ctrl-b" a couple of times.
 ```
-<ctrl> + b
+ctrl-b
 ```
+If you have not installed LaTeXTools in sublime you can follow [these](https://github.com/Haraldlons/linux-tricks/blob/master/installs/install_latexmk_and_common_packages.sh) instructions.
 
-## Ideas for improvement
-1. Make tiers
-- 1-3	Challenger
-- 4-10  Master
-- 11-20 Diamond
-- 21-30 Platinum
-- 31-40 Gold
-- 41-50 Silver
-- 51-60 Bronze
-- 61-> Wood
-
-One Paragraph of project description goes here
 
 ## Getting Started
 
@@ -149,3 +138,16 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
+
+## Ideas for improvement
+1. Make tiers
+- 1-3	Challenger
+- 4-10  Master
+- 11-20 Diamond
+- 21-30 Platinum
+- 31-40 Gold
+- 41-50 Silver
+- 51-60 Bronze
+- 61-> Wood
+
+One Paragraph of project description goes here
